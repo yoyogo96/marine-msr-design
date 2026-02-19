@@ -1,0 +1,156 @@
+# MSR Design Analysis Results
+
+
+## 1. Foundation
+
+- **Thermal power**: 40.000 MWth
+- **Electrical power**: 16.000 MWe
+- **Thermal efficiency**: 40.000 %
+- **Core diameter**: 1.245 m
+- **Core height**: 1.494 m
+- **Core volume**: 1.818 m3
+- **Number of channels**: 562.0 
+- **Channel diameter**: 2.500 cm
+- **Channel pitch**: 5.000 cm
+- **Fuel salt fraction**: 0.2300 
+- **Graphite fraction**: 0.7700 
+- **Mass flow rate**: 167.6 kg/s
+- **Reynolds number**: 2242.0 
+- **Inlet temperature**: 600.0 C
+- **Outlet temperature**: 700.0 C
+- **Uranium mass**: 446.0 kg
+- **U-235 mass**: 53.525 kg
+
+## 2. Neutronics
+
+- **Sigma_a (1/cm)**: 2.465 1/cm
+- **Sigma_f (1/cm)**: 1.666 1/cm
+- **nu*Sigma_f (1/cm)**: 4.048 1/cm
+- **Diffusion coeff D (cm)**: 0.0088 cm
+- **Core diameter (geometry)**: 1.245 m
+- **Core height (geometry)**: 1.494 m
+- **Power density**: 22.000 MW/m3
+- **Graphite mass**: 2502.8 kg
+- **k_eff (diffusion)**: 1.541 
+- **Axial peaking factor**: 1.540 
+- **Radial peaking factor**: 1.591 
+- **k_eff (four-factor)**: 1.146 
+- **k_inf**: 1.642 
+- **Non-leakage probability**: 0.6978 
+- **Critical enrichment**: 7.353 %
+- **k_eff at critical enrich.**: 1.0000 
+- **alpha_fuel**: -8.305 pcm/K
+- **alpha_graphite**: -0.0379 pcm/K
+- **alpha_density**: 17.019 pcm/(kg/m3)
+- **All negative feedback**: Yes 
+- **Burnup**: 45.118 MWd/kgU
+- **Core lifetime (EFPD)**: 510.0 EFPD
+- **Core lifetime (years)**: 1.643 yr
+
+## 3. Thermal-Hydraulics
+
+- **Peak salt temp (nominal)**: 700.0 C
+- **Peak salt temp (hot ch.)**: 726.5 C
+- **Peak graphite temp**: -369.6 C
+- **Peak graphite (hot ch.)**: -626.6 C
+- **Channel Re**: 2242.0 
+- **Channel pressure drop**: 0.1461 kPa
+- **Primary dP total**: 2.669 kPa
+- **Pump power (primary)**: 0.2846 kW
+- **Natural circ fraction**: 59.897 %
+- **Intermediate dP total**: 36.881 kPa
+- **Pump power (intermediate)**: 4.567 kW
+- **Peak salt (system)**: 726.5 C
+- **Peak graphite (system)**: 732.8 C
+- **Peak vessel wall**: 670.0 C
+- **All thermal limits met**: Yes 
+
+## 4. Heat Exchanger
+
+- **HX duty**: 40.000 MW
+- **LMTD**: 50.000 K
+- **U overall**: 184.5 W/(m2.K)
+- **HX area**: 4336.3 m2
+- **Number of tubes**: 5013.0 
+- **Tube length**: 4.000 m
+- **Shell diameter**: 1.918 m
+- **Effectiveness**: 66.667 %
+- **HX total mass**: 28008.4 kg
+- **Tube-side dP**: 0.3057 kPa
+- **Shell-side dP**: 15.725 kPa
+
+## 5. Structural
+
+- **Shell thickness (total)**: 1.500 cm
+- **Vessel outer radius**: 0.8374 m
+- **Vessel height**: 4.139 m
+- **Design pressure**: 0.3000 MPa
+- **Allowable stress**: 55.000 MPa
+- **Pressure safety factor**: 2.587 
+- **Vessel total weight**: 2982.3 kg
+- **Max stress intensity**: 99.826 MPa
+- **ASME 3Sm limit**: 165.0 MPa
+- **ASME safety factor**: 1.653 
+- **Creep rupture limit**: 83.000 MPa
+- **Creep safety factor**: 0.8314 
+- **Total reactor mass**: 7633.4 kg
+- **Max lateral force**: 42.799 kN
+- **Max vertical force**: 112.3 kN
+- **Overturning moment**: 93.374 kN.m
+- **Bolt safety factor**: 3.000 
+
+## 6. Shielding
+
+- **Neutron source**: 3.034e+18 n/s
+- **Gamma source (total)**: 1.869e+19 photons/s
+- **Gamma power (total)**: 2921.5 kW
+- **Neutron dose rate (5m)**: 7.022e+06 uSv/hr
+- **Gamma dose rate (5m)**: 2.537 uSv/hr
+- **Total dose rate (5m)**: 7.022e+06 uSv/hr
+- **Max dose rate**: 7.022e+06 uSv/hr
+- **Max annual dose**: 4.876e+06 mSv/yr
+- **All within dose limits**: NO 
+
+## 7. Safety Transients
+
+- **ULOF peak power**: 1.000 x nominal
+- **ULOF peak fuel temp**: 659.0 C
+- **ULOF margin to boiling**: 741.0 K
+- **UTOP peak power**: 1.879 x nominal
+- **UTOP peak fuel temp**: 681.4 C
+- **UTOP margin to boiling**: 718.6 K
+- **SBO peak fuel temp**: 650.0 C
+- **SBO min fuel temp**: 561.5 C
+- **SBO margin to freezing**: 102.5 K
+
+## 8. Monte Carlo Neutronics (Basic Design)
+
+- **MC method**: 2-group Monte Carlo transport
+- **k_eff (MC, 12% enr.)**: 1.510 ± 0.027
+- **k_eff (MC, no axial refl.)**: 1.495 ± 0.016
+- **MC critical enrichment**: 3.70 %
+- **Leakage fraction (MC)**: 13.4 %
+- **Non-leakage prob. (MC)**: 0.866
+- **dk/dT (MC)**: -40.7 ± 11.8 pcm/K
+- **Negative feedback (MC)**: Yes
+- **Axial peaking (MC)**: 1.70
+- **Radial peaking (MC)**: 2.30
+- **Total peaking (MC)**: 3.92
+- **Excess reactivity (12%)**: ~51,000 pcm
+- **MC code**: Custom Python, 7,018 lines
+- **Energy structure**: 2 groups (0.625 eV cutoff)
+- **Geometry**: 3D hex lattice + radial/axial reflectors
+
+## 9. Drain Tank
+
+- **Salt volume**: 0.8364 m3
+- **Tank volume**: 0.9200 m3
+- **Tank diameter**: 0.9209 m
+- **Tank height**: 1.381 m
+- **k_eff (drain tank)**: 0.2936 
+- **Subcritical**: Yes 
+- **Subcriticality margin**: 0.6564 dk
+- **Decay heat @ 1 hr**: 429.8 kW
+- **Tank equilibrium temp**: 15332.9 C
+- **Cooling adequate**: NO 
+- **Drain time**: 13.028 s

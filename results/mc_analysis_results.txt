@@ -1,0 +1,51 @@
+================================================================================
+  40 MWth Marine MSR - Monte Carlo Neutronics Analysis Report
+  Generated: 2026-02-19 21:00:38
+================================================================================
+
+
+======================================================================
+  Monte Carlo k-Eigenvalue Calculation Results
+======================================================================
+
+  k_eff           = 1.47264 +/- 0.00539
+  95% CI          = [1.46208, 1.48320]
+  Reactivity      = 32095 pcm
+
+  Batches         = 50 total (10 inactive + 40 active)
+  Particles/batch = 2,000
+  Total histories = 100,000
+
+  Leakage frac    = 0.0863 (8.63%)
+  Non-leakage P   = 0.9137
+
+  Axial peaking   = 1.636
+  Radial peaking  = 2.023
+  Total peaking   = 3.715
+
+  Wall time       = 335.0 s
+  Histories/sec   = 299
+======================================================================
+
+--- Neutron Balance ---
+  Leakage:       6.9020e+03
+  Absorption:    7.3098e+04
+  Fission:       4.8475e+04
+  Leakage frac:  0.0863
+
+--- MC vs. Diffusion Comparison ---
+  k_eff MC:        1.47264 +/- 0.00539
+  k_eff diffusion: 1.14570
+  Delta:           +32694 pcm
+
+--- Four-Factor Formula ---
+  eta     = 1.6585
+  f       = 0.9905
+  p       = 0.9628
+  epsilon = 1.0456
+  k_inf   = 1.65389
+  P_NL    = 0.9137
+  k_eff   = 1.51120
+
+  Total analysis time: 0.0 s (0.0 min)
+================================================================================
