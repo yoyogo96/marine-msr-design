@@ -10,6 +10,16 @@ Chapter 10: Monte Carlo Neutron Transport Analysis
 write_chapter(pdf) 함수는 MSRReport 인스턴스를 받아
 Chapter 10 내용을 PDF에 기록한다.
 """
+import os
+
+
+def _fig_path(name):
+    """Resolve path to a figure file."""
+    # __file__ = .../report/chapters/ch10.py → go up 2 levels to repo root
+    chapters_dir = os.path.dirname(os.path.abspath(__file__))
+    report_dir = os.path.dirname(chapters_dir)
+    repo_root = os.path.dirname(report_dir)
+    return os.path.join(repo_root, "figures", name)
 
 
 def write_chapter(pdf):
@@ -220,6 +230,24 @@ def write_chapter(pdf):
         "고유값 및 반응도 계수의 정확도를 크게 향상시킨다."
     )
 
+    # Figure 10.3 - 2-group energy structure
+    if pdf.get_y() > 160:
+        pdf.add_page()
+    fig_path = _fig_path("mc_energy_groups.png")
+    if os.path.exists(fig_path):
+        pdf.image(fig_path, x=25, w=160)
+        pdf.ln(2)
+        pdf.set_font("AppleSD", "", 8.5)
+        pdf.set_text_color(45, 55, 72)
+        pdf.multi_cell(w=165, h=5,
+            text="그림 10.3 2군 에너지 구조. 열중성자군(E < 0.625 eV)의 Maxwell 열 스펙트럼과 "
+                 "고속중성자군(E > 0.625 eV)의 핵분열 스펙트럼을 나타낸다.",
+            align="C")
+        pdf.ln(4)
+        pdf.set_text_color(45, 55, 72)
+    else:
+        pdf.add_figure_placeholder("그림 10.3 - 2군 에너지 구조", height=70)
+
     pdf.subsection_title("10.3.2 단면적 보정(calibration) 방법론")
 
     pdf.body_text(
@@ -409,12 +437,42 @@ def write_chapter(pdf):
         "노심 경계와의 간극(~2.25 cm)은 가장자리 흑연 영역을 형성한다."
     )
 
-    pdf.add_figure_placeholder(
-        "그림 10.1 육각 격자 연료 채널 배치도 (xy 단면). "
-        "547개 연료 채널(적색)이 흑연 감속재(회색) 내에 배치되며, "
-        "외곽에 15 cm 두께의 흑연 반사체(청색)가 위치한다.",
-        height=70
-    )
+    # Figure 10.1 - Hex lattice cross-section
+    if pdf.get_y() > 160:
+        pdf.add_page()
+    fig_path = _fig_path("mc_hex_lattice.png")
+    if os.path.exists(fig_path):
+        pdf.image(fig_path, x=30, w=150)
+        pdf.ln(2)
+        pdf.set_font("AppleSD", "", 8.5)
+        pdf.set_text_color(45, 55, 72)
+        pdf.multi_cell(w=165, h=5,
+            text="그림 10.1 육각 격자 연료 채널 배치도 (xy 단면). "
+                 "547개 연료 채널(주황)이 흑연 감속재(회색) 내에 배치되며, "
+                 "외곽에 15 cm 두께의 흑연 반사체가 위치한다.",
+            align="C")
+        pdf.ln(4)
+        pdf.set_text_color(45, 55, 72)
+    else:
+        pdf.add_figure_placeholder("그림 10.1 - 육각 격자 배치도", height=70)
+
+    # Figure 10.2 - Axial cross-section
+    if pdf.get_y() > 160:
+        pdf.add_page()
+    fig_path = _fig_path("mc_axial_section.png")
+    if os.path.exists(fig_path):
+        pdf.image(fig_path, x=32, w=145)
+        pdf.ln(2)
+        pdf.set_font("AppleSD", "", 8.5)
+        pdf.set_text_color(45, 55, 72)
+        pdf.multi_cell(w=165, h=5,
+            text="그림 10.2 노심 축방향 단면도. 노심 활성 영역(124.5 × 149.4 cm), "
+                 "반경/축방향 반사체(각 15 cm), 압력용기 경계를 표시한다.",
+            align="C")
+        pdf.ln(4)
+        pdf.set_text_color(45, 55, 72)
+    else:
+        pdf.add_figure_placeholder("그림 10.2 - 노심 축방향 단면도", height=70)
 
     pdf.subsection_title("10.4.3 반사체 모델")
 
@@ -719,6 +777,24 @@ def write_chapter(pdf):
         "MC 임계 농축도는 3.70 ± 0.2%(통계 불확실도 포함)로 결정되었다."
     )
 
+    # Figure 10.4 - Critical enrichment bisection search
+    if pdf.get_y() > 160:
+        pdf.add_page()
+    fig_path = _fig_path("mc_critical_enrichment.png")
+    if os.path.exists(fig_path):
+        pdf.image(fig_path, x=22, w=165)
+        pdf.ln(2)
+        pdf.set_font("AppleSD", "", 8.5)
+        pdf.set_text_color(45, 55, 72)
+        pdf.multi_cell(w=165, h=5,
+            text="그림 10.4 이분법 임계 농축도 탐색 결과. 6회 반복으로 3.70%에 수렴하였으며, "
+                 "개념설계 확산이론 결과(7.35%)와 비교한다.",
+            align="C")
+        pdf.ln(4)
+        pdf.set_text_color(45, 55, 72)
+    else:
+        pdf.add_figure_placeholder("그림 10.4 - 임계 농축도 탐색 결과", height=70)
+
     pdf.subsection_title("10.7.3 축방향 반사체 효과")
 
     pdf.body_text(
@@ -926,6 +1002,24 @@ def write_chapter(pdf):
         "플럭스 재분배를 반영하기 때문이다."
     )
 
+    # Figure 10.5 - Temperature reactivity coefficient
+    if pdf.get_y() > 160:
+        pdf.add_page()
+    fig_path = _fig_path("mc_temperature_coeff.png")
+    if os.path.exists(fig_path):
+        pdf.image(fig_path, x=25, w=160)
+        pdf.ln(2)
+        pdf.set_font("AppleSD", "", 8.5)
+        pdf.set_text_color(45, 55, 72)
+        pdf.multi_cell(w=165, h=5,
+            text="그림 10.5 온도 반응도 계수. 600°C와 700°C에서의 k_eff 계산 결과 및 "
+                 "선형 추세선(dk/dT = -41.0 pcm/K)을 나타낸다.",
+            align="C")
+        pdf.ln(4)
+        pdf.set_text_color(45, 55, 72)
+    else:
+        pdf.add_figure_placeholder("그림 10.5 - 온도 반응도 계수", height=70)
+
     pdf.add_note(
         "MC 해석에 의한 α_T = -40.7 pcm/K는 강한 음의 온도 반응도 궤환을 "
         "정량적으로 확인하는 결과이다. 이 값은 3.5σ 수준에서 통계적으로 "
@@ -1036,10 +1130,11 @@ def write_chapter(pdf):
         "MC 결과와 개념설계 결과의 사이에 위치할 것으로 추정된다."
     )
 
-    pdf.add_figure_placeholder(
-        "그림 10.2 MC 출력 분포 결과. (좌) 축방향 출력 분포, "
-        "(우) 반경방향 출력 분포. 개념설계의 코사인/베셀 분포(점선)와 비교.",
-        height=70
+    pdf.add_note(
+        "그림 10.6 (출력 분포 시각화): MC 출력 분포 결과 - (좌) 축방향 출력 분포, "
+        "(우) 반경방향 출력 분포. 개념설계의 코사인/베셀 분포(점선)와의 비교 그림은 "
+        "향후 연속에너지 MC 해석과 연동하여 추가 예정이다.",
+        note_type="info"
     )
 
     # ===================================================================
