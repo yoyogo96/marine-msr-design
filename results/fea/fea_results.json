@@ -1,0 +1,33 @@
+{
+  "level": 1,
+  "mesh_info": {
+    "n_nodes": 2394,
+    "n_elements": 4592,
+    "element_type": "tri3",
+    "coord_system": "axisymmetric"
+  },
+  "timing": {
+    "solve_seconds": 4.042846202850342,
+    "viz_seconds": 2.353559970855713
+  },
+  "neutronics": {
+    "keff": 1.6862627102545027,
+    "converged": true,
+    "iterations": 86,
+    "peak_flux": 1.0,
+    "peak_power_density_W_m3": 89626273.47902425
+  },
+  "thermal": {
+    "T_min_K": 311.88606610705926,
+    "T_max_K": 989.6188393100039,
+    "T_avg_core_K": 973.5004998929686,
+    "converged": true,
+    "iterations": 5,
+    "max_heat_flux_W_m2": 328304.0975724385
+  },
+  "structural": {
+    "max_displacement_m": 0.0028326238733610764,
+    "max_von_mises_Pa": 1110107240.9212232,
+    "max_stress_intensity_Pa": 1582506268.4624732
+  }
+}
